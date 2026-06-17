@@ -1,4 +1,4 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿<!-- Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
@@ -9,4 +9,42 @@
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
-</Router>
+</Router-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/home/images/favicons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/home/images/favicons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/home/images/favicons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/home/images/favicons/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/home/images/favicons/favicon.ico" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="/home/css/main-new.css">
+    <link rel="stylesheet" href="/home/css/nav-new.css">
+    <!-- js -->
+    <script src="https://kit.fontawesome.com/edca1a2f4c.js" crossorigin="anonymous"></script>
+    <!-- svg -->
+    <script>
+        window.grunticon = function (e) { if (e && 3 === e.length) { var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) { var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0]; r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a) }, r = new t.Image; r.onerror = function () { o(!1) }, r.onload = function () { o(1 === r.width && 1 === r.height) }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" } };
+        grunticon(["/home/css/icons.data.svg.css", "/home/css/icons.data.png.css", "/home/css/icons.fallback.css"]);
+    </script>
+
+    <noscript>
+        <link rel="stylesheet" href="/home/css/icons.fallback.css" />
+    </noscript>
+
+    <base href="~/" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+
+<body class="keys-home">
+    <Routes />
+</body>
+
+</html>

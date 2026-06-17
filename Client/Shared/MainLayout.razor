@@ -1,13 +1,13 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+<div class="main">
+    <Header />
+    <MainNav />
+    <main id="main">
+        <div class="gutter main-content">
+            @* .razor pages come here *@
             @Body
-        </article>
+        </div>
     </main>
+    <Footer />
 </div>
