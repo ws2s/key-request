@@ -1,7 +1,12 @@
 ﻿@page "/"
 
 <PageTitle>Keys/Access - University of Virginia Facilities Management - Customer Portal</PageTitle>
-
+<script>
+    (async function() {
+        const { text } = await (await fetch(`/api/data`)).json();
+        document.querySelector('#name').textContent = text;
+    }());
+</script>
 <div class="keys-container">
     <div class="linkBoxes">
         <p>
@@ -16,7 +21,7 @@
                     <div class="icon-card-inner">
                         <div class="icon-card-image-container">
                             <div class="icon-card-image icon-recycle-bin">
-                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/residential-lockout_icon.svg" alt="">
+                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/residential-lockout_icon.svg" alt="Residential key icon">
                             </div>
                         </div>
                         <div class="icon-card-copy">
@@ -34,7 +39,7 @@
                     <div class="icon-card-inner">
                         <div class="icon-card-image-container">
                             <div class="icon-card-image icon-list-check">
-                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/access-space_icon.svg" alt="">
+                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/access-space_icon.svg" alt="Key to an opened door icon">
                             </div>
                         </div>
                         <div class="icon-card-copy">
@@ -66,7 +71,7 @@
                     <div class="icon-card-inner">
                         <div class="icon-card-image-container">
                             <div class="icon-card-image icon-list-eye">
-                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/non-residential-lockout_icon.svg" alt="Clipboard with a searching eye">
+                                <img src="https://customerportal.fm.virginia.edu/Home/images/layout/non-residential-lockout_icon.svg" alt="Non-residential key icon">
                             </div>
                         </div>
                         <div class="icon-card-copy">
