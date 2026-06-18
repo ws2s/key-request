@@ -27,10 +27,10 @@
         grunticon(["/home/css/icons.data.svg.css", "/home/css/icons.data.png.css", "/home/css/icons.fallback.css"]);
     </script>
     <script>
-    (async function() {
-        const { text } = await (await fetch(`/api/data`)).json();
-        document.querySelector('#name').textContent = text;
-    }());
+        (async function() {
+            const { text } = await (await fetch(`/api/data`)).json();
+            document.querySelector('#name').textContent = text;
+        }());
     </script>
 </body>
 
