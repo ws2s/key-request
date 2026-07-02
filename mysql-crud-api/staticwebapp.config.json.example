@@ -1,0 +1,18 @@
+{
+  "//": "Place this file at the ROOT of your frontend app (not the API project). Azure Static Web Apps automatically routes any request to /api/* to your linked Function App, so you don't need to declare that route explicitly. This file is only needed if you want extra behavior, such as restricting write operations to authenticated users.",
+
+  "routes": [
+    {
+      "route": "/api/items",
+      "methods": ["POST", "PUT", "DELETE"],
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+
+  "responseOverrides": {
+    "401": {
+      "statusCode": 401,
+      "redirect": "/.auth/login/aad"
+    }
+  }
+}
