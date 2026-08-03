@@ -1,156 +1,203 @@
 ﻿@page "/"
-@inject IJSRuntime JsRuntime
+<!DOCTYPE html>
+<html lang="en">
 
-<PageTitle>Keys/Access - University of Virginia Facilities Management - Customer Portal</PageTitle>
-<script>
-    (async function() {
-        const { text } = await (await fetch(`/api/data`)).json();
-        document.querySelector('#name').textContent = text;
-    }());
-</script>
-<div class="keys-container">
-    <div class="linkBoxes">
-        <p>
-            The key request form has changed and is accessible below. If you have any questions please see the Key Request Overview training document on the <a href="https://www.fm.virginia.edu/services/lock.html" target="_blank">Lock Shop site</a> or contact the Customer Support Center.
-        </p>
-        <div class="heading-left">
-            <h1 class="orange-line-right">Keys/Electronic Access</h1>
-        </div>
-        <div class="icon-cards">
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/residential">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-recycle-bin">
-                                <img src="/home/images/layout/residential-lockout_icon.svg" alt="Residential key icon">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer Portal | UVA Facilities Management</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="css/main-new.css">
+    <link rel="stylesheet" href="css/nav-new.css">
+    <!-- js -->
+    <script src="https://kit.fontawesome.com/edca1a2f4c.js" crossorigin="anonymous"></script>
+    <!-- svg -->
+    <script>
+        /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+        window.grunticon = function (e) { if (e && 3 === e.length) { var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) { var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0]; r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a) }, r = new t.Image; r.onerror = function () { o(!1) }, r.onload = function () { o(1 === r.width && 1 === r.height) }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" } };
+        grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"]);
+    </script>
+
+    <noscript>
+        <link href="css/icons.fallback.css" rel="stylesheet">
+    </noscript>
+</head>
+
+<body class="home has-header-urgent">
+    <div v-scope="PageTemplate()">
+        <page-template>
+            <slot id="slot">
+                <h1 class="sr-only">Customer Portal</h1>
+                <!-- <div class="gutter main-content landing"> -->
+                <div class="request-types">
+                    <div id="mainRequests">
+                        <div class="heading-left">
+                            <h2 class="orange-line-right">Select type of request</h2>
+                        </div>
+                        <div class="icon-cards">
+                            <div class="icon-card">
+                                <a href="/Customerrequest/request/report">
+                                    <div class="icon-card-inner">
+                                        <div class="icon-card-image-container">
+                                            <div class="icon-card-image">
+                                                <span class="fa-duotone fa-solid fa-hammer-brush" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-card-copy">
+                                            <h3 class="icon-card-title">Request service</h3>
+                                            <ul class="icon-card-description">
+                                                <li>Maintenance</li>
+                                                <li>Furniture/equipment</li>
+                                                <li>Event support</li>
+                                                <li>Signage</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="icon-card">
+                                <a href="/Surplus">
+                                    <div class="icon-card-inner">
+                                        <div class="icon-card-image-container">
+                                            <div class="icon-card-image">
+                                                <span class="fa-duotone fa-solid fa-recycle" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-card-copy">
+                                            <h3 class="icon-card-title"><span class="case-mixed">ReUSE</span> Store</h3>
+                                            <ul class="icon-card-description">
+                                                <li>Shop the ReUSE Store</li>
+                                                <li>Surplus UVA property</li>
+                                                <li>Review your requests</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="icon-card">
+                                <a href="/keyrequest">
+                                    <div class="icon-card-inner">
+                                        <div class="icon-card-image-container">
+                                            <div class="icon-card-image">
+                                                <span class="fa-duotone fa-solid fa-person-to-door" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-card-copy">
+                                            <h3 class="icon-card-title">Keys/Electronic access</h3>
+                                            <ul class="icon-card-description">
+                                                <li>Request access</li>
+                                                <li>Change/install locks</li>
+                                                <li>Lockouts</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="icon-card">
+                                <a href="/customerrequest/request/project">
+                                    <div class="icon-card-inner">
+                                        <div class="icon-card-image-container">
+                                            <div class="icon-card-image">
+                                                <span class="fa-duotone fa-solid fa-traffic-cone" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+
+                                            </div>
+                                        </div>
+                                        <div class="icon-card-copy">
+                                            <h3 class="icon-card-title">Projects</h3>
+                                            <ul class="icon-card-description">
+                                                <li>Construction</li>
+                                                <li>Renovations</li>
+                                                <li>Estimates</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="icon-card">
+                                <a href="/SpecialRequests/">
+                                    <div class="icon-card-inner">
+                                        <div class="icon-card-image-container">
+                                            <div class="icon-card-image">
+                                                <span class="fa-duotone fa-solid fa-building-circle-check" style="--fa-primary-color: #009ddb; --fa-secondary-color: #232d4b;; --fa-secondary-opacity: 1;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-card-copy">
+                                            <h3 class="icon-card-title">Special requests</h3>
+                                            <ul class="icon-card-description">
+                                                <li>BAS requests</li>
+                                                <li>ILSM submission/review</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div> <!-- /.icon-cards -->
+                    </div> <!-- /#mainRequests -->
+                </div>
+
+                <div class="flex flex-column requests-wrap">
+                    <div class="request-tracking">
+                        <div class="flex flex-row copy-blue">
+                            <div class="flex flex-20 bg-white request-heading">
+                                <h2 class="uppercase">My work orders</h2>
+                            </div>
+                            <div class="bg-blue-primary flex flex-row requests-count">
+                                <div class="flex bg-blue-primary">
+                                    <h3>
+                                        Active:</h3>
+                                        <div class="count-box">
+                                            <p id="openCount">3</p>
+                                        </div>
+                                        <p><a href="/wostatus/workorder/index/?status=open">View active work orders</a></p>
+                                </div>
+                                <div class="divider-vertical"></div>
+                                <div class="flex bg-blue-primary">
+                                    <h3>Completed in the last 30 days:</h3>
+                                    <div class="count-box">
+                                        <p id="closedCount">0</p>
+                                    </div>
+                                    <p><a href="/wostatus/workorder/index/?status=closed">View completed work orders</a></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">
-                                Residential lockout/<br>
-                                lost key
-                            </h2>
-                        </div>
                     </div>
-                </a>
-            </div>
 
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/requestor">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-list-check">
-                                <img src="/home/images/layout/access-space_icon.svg" alt="Key to an opened door icon">
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">Key requests</h2>
-                            <p class="icon-card-description">Order keys, transfer keys, request rekey, etc.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/keyreview/1">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-list-check">
-                                <img src="/home/images/layout/reuse_checklist-icon.svg" alt="Checklist on a clipboard">
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">Review key requests</h2>
-                            <p class="icon-card-description">View, update, print your key requests, etc.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/non-residential">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-list-eye">
-                                <img src="/home/images/layout/non-residential-lockout_icon.svg" alt="Non-residential key icon">
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">
-                                Non-residential lockout/<br>
-                                lost key
-                            </h2>
-                            <p class="icon-card-description">Office lockouts, etc.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/Customerrequest/request/report">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-recycle-green">
-                                <img src="/home/images/layout/auxiliary-key_icon.svg" alt="Recycle icon">
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">Non-door keys</h2>
-                            <p class="icon-card-description">Filing cabinets, desks, mail boxes, padlocks, etc.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/customerrequest/request/electronicaccess">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-list-check">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                    <path d="M184 32C197.3 32 208 42.7 208 56L208 112L160 112L160 56C160 42.7 170.7 32 184 32zM456 352C442.7 352 432 341.3 432 328L432 56C432 42.7 442.7 32 456 32C469.3 32 480 42.7 480 56L480 328C480 341.3 469.3 352 456 352zM384 48L384 132.1C374.3 125.4 363.6 120.1 352 116.7L352 48C352 39.2 359.2 32 368 32C376.8 32 384 39.2 384 48zM320 64L320 112L256 112L256 64C256 46.3 270.3 32 288 32C305.7 32 320 46.3 320 64zM512 64C512 46.3 526.3 32 544 32C561.7 32 576 46.3 576 64L576 320C576 337.7 561.7 352 544 352C526.3 352 512 337.7 512 320L512 64zM64 224C64 188.7 92.7 160 128 160L320 160C355.3 160 384 188.7 384 224L384 512C384 547.3 355.3 576 320 576L128 576C92.7 576 64 547.3 64 512L64 224zM136 396L136 420C136 426.6 141.4 432 148 432L188 432C194.6 432 200 426.6 200 420L200 396C200 389.4 194.6 384 188 384L148 384C141.4 384 136 389.4 136 396zM152 224C138.7 224 128 234.7 128 248L128 296C128 309.3 138.7 320 152 320L296 320C309.3 320 320 309.3 320 296L320 248C320 234.7 309.3 224 296 224L152 224zM136 476L136 500C136 506.6 141.4 512 148 512L188 512C194.6 512 200 506.6 200 500L200 476C200 469.4 194.6 464 188 464L148 464C141.4 464 136 469.4 136 476zM260 384C253.4 384 248 389.4 248 396L248 420C248 426.6 253.4 432 260 432L300 432C306.6 432 312 426.6 312 420L312 396C312 389.4 306.6 384 300 384L260 384zM248 476L248 500C248 506.6 253.4 512 260 512L300 512C306.6 512 312 506.6 312 500L312 476C312 469.4 306.6 464 300 464L260 464C253.4 464 248 469.4 248 476z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">Access control hardware</h2>
-                            <p class="icon-card-description">Estimate for installation of new electronic access</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="icon-card">
-                <a href="https://idoffice.virginia.edu/mobile-id-wallet">
-                    <div class="icon-card-inner">
-                        <div class="icon-card-image-container">
-                            <div class="icon-card-image icon-list-check">
-                                <img src="/home/images/layout/uva-rotunda-logo_blue.png" alt="Graphic llustration of UVA Rotunda in University Blue">
-                            </div>
-                        </div>
-                        <div class="icon-card-copy">
-                            <h2 class="icon-card-title">Cavalier Card Office</h2>
-                            <p class="icon-card-description">ID information and contact details</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
+                </div><!-- /.requests-wrap -->
+            </slot>
+        </page-template>
     </div>
-</div>
 
-@code {
-    //protected override async Task OnInitializedAsync()
-    //{
-        //await base.OnInitializedAsync();
-    //}
-    
-    //protected override async Task OnAfterRenderAsync(bool firstRender)
-    //{
-    //    if (firstRender)
-    //    {
-    //        await JsRuntime.InvokeVoidAsync("addMobileNav");
-    //    }
-    //}
-}
+    <a href="#" id="gotop" title="Back to top" style="display: none;">&nbsp;</a>
+    <script src="/Home/js/components/app.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/Home/js/navbar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON('/../wostatus/api/WOApi/GetRequestCounts')
+                .done(function (data) {
+                    $('#openCount').text(data.OpenCount);
+
+                    $('#closedCount').text(data.ClosedCount);
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#openCount').text('0');
+                    $('#closedCount').text('0');
+
+                });
+        });
+    </script>
+</body>
+
+</html>
