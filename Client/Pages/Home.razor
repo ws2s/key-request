@@ -1,0 +1,146 @@
+﻿@page "/home"
+
+<PageTitle>Customer Portal | UVA Facilities Management</PageTitle>
+
+<body class="home has-header-urgent">
+    <h1 class="sr-only">Customer Portal</h1>
+    <!-- <div class="gutter main-content landing"> -->
+    <div class="request-types">
+        <div id="mainRequests">
+            <div class="heading-left">
+                <h2 class="orange-line-right">Select type of request</h2>
+            </div>
+            <div class="icon-cards">
+                <div class="icon-card">
+                    <a href="/Customerrequest/request/report">
+                        <div class="icon-card-inner">
+                            <div class="icon-card-image-container">
+                                <div class="icon-card-image">
+                                    <span class="fa-duotone fa-solid fa-hammer-brush" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                </div>
+                            </div>
+                            <div class="icon-card-copy">
+                                <h3 class="icon-card-title">Request service</h3>
+                                <ul class="icon-card-description">
+                                    <li>Maintenance</li>
+                                    <li>Furniture/equipment</li>
+                                    <li>Event support</li>
+                                    <li>Signage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="icon-card">
+                    <a href="/Surplus">
+                        <div class="icon-card-inner">
+                            <div class="icon-card-image-container">
+                                <div class="icon-card-image">
+                                    <span class="fa-duotone fa-solid fa-recycle" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                </div>
+                            </div>
+                            <div class="icon-card-copy">
+                                <h3 class="icon-card-title"><span class="case-mixed">ReUSE</span> Store</h3>
+                                <ul class="icon-card-description">
+                                    <li>Shop the ReUSE Store</li>
+                                    <li>Surplus UVA property</li>
+                                    <li>Review your requests</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="icon-card">
+                    <a href="/keyrequest">
+                        <div class="icon-card-inner">
+                            <div class="icon-card-image-container">
+                                <div class="icon-card-image">
+                                    <span class="fa-duotone fa-solid fa-person-to-door" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+                                </div>
+                            </div>
+                            <div class="icon-card-copy">
+                                <h3 class="icon-card-title">Keys/Electronic access</h3>
+                                <ul class="icon-card-description">
+                                    <li>Request access</li>
+                                    <li>Change/install locks</li>
+                                    <li>Lockouts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="icon-card">
+                    <a href="/customerrequest/request/project">
+                        <div class="icon-card-inner">
+                            <div class="icon-card-image-container">
+                                <div class="icon-card-image">
+                                    <span class="fa-duotone fa-solid fa-traffic-cone" style="--fa-primary-color: #232d4b; --fa-secondary-color: #009DDB; --fa-secondary-opacity: 1;"></span>
+
+                                </div>
+                            </div>
+                            <div class="icon-card-copy">
+                                <h3 class="icon-card-title">Projects</h3>
+                                <ul class="icon-card-description">
+                                    <li>Construction</li>
+                                    <li>Renovations</li>
+                                    <li>Estimates</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="icon-card">
+                    <a href="/SpecialRequests/">
+                        <div class="icon-card-inner">
+                            <div class="icon-card-image-container">
+                                <div class="icon-card-image">
+                                    <span class="fa-duotone fa-solid fa-building-circle-check" style="--fa-primary-color: #009ddb; --fa-secondary-color: #232d4b;; --fa-secondary-opacity: 1;"></span>
+                                </div>
+                            </div>
+                            <div class="icon-card-copy">
+                                <h3 class="icon-card-title">Special requests</h3>
+                                <ul class="icon-card-description">
+                                    <li>BAS requests</li>
+                                    <li>ILSM submission/review</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div> <!-- /.icon-cards -->
+        </div> <!-- /#mainRequests -->
+    </div>
+
+    <div class="flex flex-column requests-wrap">
+        <div class="request-tracking">
+            <div class="flex flex-row copy-blue">
+                <div class="flex flex-20 bg-white request-heading">
+                    <h2 class="uppercase">My work orders</h2>
+                </div>
+                <div class="bg-blue-primary flex flex-row requests-count">
+                    <div class="flex bg-blue-primary">
+                        <h3>
+                            Active:</h3>
+                            <div class="count-box">
+                                <p id="openCount">3</p>
+                            </div>
+                            <p><a href="/wostatus/workorder/index/?status=open">View active work orders</a></p>
+                    </div>
+                    <div class="divider-vertical"></div>
+                    <div class="flex bg-blue-primary">
+                        <h3>Completed in the last 30 days:</h3>
+                        <div class="count-box">
+                            <p id="closedCount">0</p>
+                        </div>
+                        <p><a href="/wostatus/workorder/index/?status=closed">View completed work orders</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- /.requests-wrap -->
+</body>

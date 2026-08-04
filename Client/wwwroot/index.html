@@ -2,17 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>KeyRequest</title>
-    <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
-    <link href="KeyRequest.styles.css" rel="stylesheet" />
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer Portal | UVA Facilities Management</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="KeyRequest.styles.css" />
+    <link rel="stylesheet" href="/home/css/main-new.css">
+    <link rel="stylesheet" href="/home/css/nav-new.css">
+    <!-- js -->
+    <script src="https://kit.fontawesome.com/edca1a2f4c.js" crossorigin="anonymous"></script>
+    <!-- svg -->
+    <script>
+        /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+        window.grunticon = function (e) { if (e && 3 === e.length) { var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) { var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0]; r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a) }, r = new t.Image; r.onerror = function () { o(!1) }, r.onload = function () { o(1 === r.width && 1 === r.height) }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" } };
+        grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"]);
+    </script>
+
+    <noscript>
+        <link href="css/icons.fallback.css" rel="stylesheet">
+    </noscript>
+
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 
-<body>
-    <div id="app">Loading...</div>
+<body class="keys-home has-header-urgent">    
+    <div v-scope="PageTemplate()">
+        <page-template>
+            <slot id="slot">
+                <div id="app">Loading...</div>
+            </slot>
+        </page-template>
+    </div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -20,12 +50,6 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="https://kit.fontawesome.com/edca1a2f4c.js" crossorigin="anonymous"></script>
-    <!-- svg -->
-    <script>
-        window.grunticon = function (e) { if (e && 3 === e.length) { var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) { var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0]; r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a) }, r = new t.Image; r.onerror = function () { o(!1) }, r.onload = function () { o(1 === r.width && 1 === r.height) }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" } };
-        grunticon(["/home/css/icons.data.svg.css", "/home/css/icons.data.png.css", "/home/css/icons.fallback.css"]);
-    </script>
     <script>
         (async function() {
             const { text } = await (await fetch(`/api/data`)).json();
@@ -112,6 +136,11 @@
             //});
         }
     </script>
+
+    <a href="#" id="gotop" title="Back to top" style="display: none;">&nbsp;</a>
+    <script src="/home/js/components/app.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/home/js/navbar.js"></script>
 </body>
 
 </html>
