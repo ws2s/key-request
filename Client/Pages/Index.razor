@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject IJSRuntime JsRuntime
+
 <PageTitle>Keys/Access - University of Virginia Facilities Management - Customer Portal</PageTitle>
 
 <div class="container">
@@ -139,11 +141,11 @@
         //await base.OnInitializedAsync();
     //}
     
-    //protected override async Task OnAfterRenderAsync(bool firstRender)
-    //{
-    //    if (firstRender)
-    //    {
-    //        await JsRuntime.InvokeVoidAsync("addMobileNav");
-    //    }
-    //}
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JsRuntime.InvokeVoidAsync("addMobileNav");
+        }
+    }
 }
