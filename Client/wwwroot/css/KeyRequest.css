@@ -1,0 +1,410 @@
+﻿
+.custom-box {
+    /*padding-top: 10px;
+    padding-bottom: 12px;
+    height: 24px;
+    line-height: 20px;*/
+    width: 90px
+}
+
+.btn.btn-primary {
+    margin: 0;
+    background-color: #232d4b;
+}
+.btn.gray-primary {
+    margin: 0;
+    color: white;
+    background-color: darkslategray;
+    border-color: darkslategray
+}
+.btn.green-primary {
+    margin: 0;
+    color: white;
+    background-color: darkgreen;
+    border-color: darkgreen
+}
+.btn.purple-primary {
+    margin: 0;
+    color: white;
+    background-color: darkmagenta;
+    border-color: darkmagenta
+}
+.btn.red-primary {
+    margin: 0;
+    color: white;
+    background-color: darkred;
+    border-color: darkred
+}
+.btn.page-current {
+    color: white;
+    background-color: mediumblue;
+    padding-top: 1px;
+    width: 40px;
+    height: 30px;
+    cursor: default
+}
+.btn.page-primary {
+    color: black;
+    border-color: blue;
+    background-color: white;
+    font-weight: bold;
+    padding-top: 1px;
+    width: 40px;
+    height: 30px
+}
+.btn.small-disabled {
+    margin: 0;
+    color: white;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    background-color: darkslategray;
+    border-color: darkslategray;
+}
+.btn.small-active {
+    margin: 0;
+    color: white;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    background-color: mediumblue;
+    border-color: mediumblue
+}
+.btn.small-x {
+    margin: 0;
+    color: darkred;
+    font-weight: bold;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    background-color: white;
+    border-color: white
+}
+
+.form-label {
+    color: #232d4b;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+
+.info-label {
+    margin-top: 0.25em;
+}
+
+.label-clickable {
+    cursor: pointer;
+}
+
+.validation-message {
+    color: darkred;
+    font-weight: bold;
+}
+
+span.help-tip {
+    cursor: pointer;
+    left: 300px;
+    width: 24px;
+    height: 24px;
+    color: White;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    border-radius: 16px;
+    background-color: #89A4CC;
+    /*display: inline-block;*/
+}
+
+.help-tip:before {
+    content: '?';
+}
+
+.help-tip:focus::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: darkblue;
+    font-weight: 200;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+    width: 430px;
+    white-space: wrap;
+    z-index: 10;
+}
+
+/*.help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #232d4b;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    left: -40px;
+    right: -4px;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 99;
+}
+
+.help-tip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.help-tip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #007bff;
+}
+
+    .help-tip .tooltip-text {
+        transform: translateX(-50%);
+        white-space: nowrap;
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;*/ /* Position above the element */
+        /*left: 50%;
+        margin-left: -60px;*/ /* Center the tooltip */
+        /*opacity: 0;*/ /* Hidden by default */
+        /*transition: opacity 0.3s;*/ /* Fade-in effect */
+    /*}
+
+    .help-tip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;*/ /* Show on hover */
+    /*}*/
+
+html {
+    /*font-family: 'FranklinGothicURWCon-Dem', Arial, Helvetica, sans-serif;*/
+}
+h2 {
+    margin-bottom: 1em;
+    text-transform: none;
+}
+
+h3 {
+    color: #232d4b;
+}
+
+h4 {
+    color: #002f6c;
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-family: 'FranklinGothicURWCon-Dem', Arial, Helvetica, sans-serif;
+    position: relative;
+    display: block;
+    margin: 20px 0 10px 0;
+}
+
+hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+a {
+    text-decoration: underline;
+}
+
+/*    p {
+        margin-top: 2em;
+    }*/
+
+.validation-message {
+    color: darkred;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+input, textarea, select, fieldset{
+    margin-bottom:0;
+}
+.form-group{
+    margin-bottom:1.5em;
+}
+.form-control{
+    display: inline-block;
+}
+.underinputtext {
+    margin-top: 0.5em;
+    font-weight: bold;
+    font: inherit;
+    display: block;
+    color: #404040;
+}
+.FixedHeighContainer {
+    height: 110px;
+    max-width: 280px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    /*   color: #495057;*/
+    font-family: inherit;
+    font: 400 13.3333px Times New Roman;
+    font-style: inherit;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-size: 1rem;
+    font-weight: 200;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.SmallContainer {
+    height: 68px;
+    max-width: 186px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    /*   color: #495057;*/
+    font-family: inherit;
+    font: 400 13.3333px Times New Roman;
+    font-style: inherit;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-size: 1rem;
+    font-weight: 200;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.CheckList {
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /*        line-height: 7px;*/
+}
+
+
+input[type=checkbox] {
+    height: 15px;
+    width: 15px;
+}
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 1.5rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #f8f9fa;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #232D4B;
+    transition: width 0.6s ease;
+}
+
+.wat {
+    height: 38px;
+    padding: 5px 5px;
+    background-color: #f1f1ef;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    max-width: 280px;
+    margin: 0;
+    font-family: inherit;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.sort-link {
+    cursor: pointer;
+    /*color: black;*/
+    /*text-decoration: underline;*/
+    font-weight: bold;
+}
+
+.autocomp {
+    position: relative;
+    left: 0;
+    width: fit-content;
+    border: 1px solid #ced4da;
+}
+
+.autocomp .options {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: white;
+    width: 100%;
+    padding: 0;
+    z-index: 10;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    box-shadow: 0 30px 25px 8px rgba(0, 0, 0, 0.1);
+}
+
+.autocomp .option {
+    display: block;
+    padding: 0.25rem;
+}
+
+.autocomp .option .option-text {
+    padding: 0.25rem 0.5rem;
+}
+
+.autocomp .option:hover {
+    background: #1E90FF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.autocomp .option.disabled {
+    background-color: lightgrey;
+    cursor: not-allowed;
+}
+
+.autocomp .option.disabled:hover {
+    background: lightgrey;
+    color: var(--bs-body);
+}
