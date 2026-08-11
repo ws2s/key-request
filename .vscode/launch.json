@@ -8,6 +8,20 @@
             "restart": true,
             "port": 9229,
             "preLaunchTask": "func: host start"
+        },
+        {
+            "name": "Blazor WASM Debug",
+            "type": "blazorwasm",
+            "request": "launch",
+            "url": "http://localhost:7192",
+            "browser": "edge",
+            "cwd": "${workspaceFolder}/Client/KeyRequest"
+        },
+        {
+            "name": "C#: Blazor Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Client/KeyRequest.csproj"
         }
     ]
 }
