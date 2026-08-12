@@ -33,7 +33,8 @@
         <link href="home/css/icons.fallback.css" rel="stylesheet">
     </noscript>
 
-    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+    <!-- component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" / -->
+    <component type="typeof(App)" render-mode="WebAssemblyPrerendered" />
 </head>
 
 <body class="keys-home has-header-urgent">    
@@ -51,6 +52,14 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        Blazor.start({
+            environment: 'Production',
+            parameters: {
+                CompID: 'compID'
+            }
+        });
+    </script>
     <script>
         (async function() {
             const { text } = await (await fetch(`/api/data`)).json();

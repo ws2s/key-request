@@ -15,7 +15,7 @@
             "request": "launch",
             "url": "http://localhost:7192",
             "browser": "edge",
-            "cwd": "${workspaceFolder}/Client/KeyRequest"
+            "cwd": "${workspaceFolder}/Client/KeyRequest.csproj"
         },
         {
             "name": "C#: Blazor Debug",

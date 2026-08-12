@@ -1,4 +1,6 @@
 ﻿@inherits LayoutComponentBase
+@inject AppData appData
+@inject IJSRuntime JsRuntime
 
 @* <div class="main">
     <Header />
@@ -11,3 +13,25 @@
     </main>
     <Footer />
 </div> *@
+
+@code {
+    private IJSObjectReference? jsModule;
+
+    protected override async Task OnInitializedAsync()
+    {        
+        if (string.IsNullOrEmpty(appData.CompID))
+        {
+            appData.CompID = "ws2s";
+        }
+    }
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //jsModule = await JsRuntime.InvokeAsync<IJSObjectReference>("import", "/home/js/browserInfo.js");
+            //appData.CompID = await JsRuntime.InvokeAsync<string>("browserInfo.getUserAgent");
+            await JsRuntime.InvokeVoidAsync("addMobileNav");
+        }
+    }
+}

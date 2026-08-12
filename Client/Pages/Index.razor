@@ -6,7 +6,6 @@
 
 <div class="container">
     <div id="linkBoxes">
-        @appData.CompID
         <p>
             @appData.CompID The key request form has changed and is accessible below. If you have any questions please see the Key Request Overview training document on the <a href="https://www.fm.virginia.edu/services/lock.html" target="_blank">Lock Shop site</a> or contact the Customer Support Center.
         </p>
@@ -15,7 +14,7 @@
         </div>
         <div class="icon-cards">
             <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/residential">
+                <a href="residential">
                     <div class="icon-card-inner">
                         <div class="icon-card-image-container">
                             <div class="icon-card-image icon-recycle-bin">
@@ -65,7 +64,7 @@
             </div>
 
             <div class="icon-card">
-                <a href="https://customerportal.fm.virginia.edu/keyrequest/non-residential">
+                <a href="non-residential">
                     <div class="icon-card-inner">
                         <div class="icon-card-image-container">
                             <div class="icon-card-image icon-list-eye">
@@ -138,16 +137,12 @@
 </div>
 
 @code {
+
     //protected override async Task OnInitializedAsync()
-    //{
-        //await base.OnInitializedAsync();
+    //{        
+    //    if (string.IsNullOrEmpty(appData.CompID))
+    //    {
+            //appData.CompID = "ws2s";
+    //    }
     //}
-    
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JsRuntime.InvokeVoidAsync("addMobileNav");
-        }
-    }
 }

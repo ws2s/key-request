@@ -1,5 +1,4 @@
 ﻿@inject AppData appData
-@inject IJSRuntime JS
 
 <Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
@@ -11,31 +10,12 @@
         </LayoutView>
     </NotFound>
 </Router>
-
-@code {    
+@code{
     [Parameter]
-    public string CompID {get; set;} = string.Empty;
-
-    public string userAgent { get; set; } = string.Empty;
+    public string? CompID {get; set;}
 
     protected override async Task OnInitializedAsync()
-    {        
-        #if DEBUG
-            await Task.Delay(10000);
-        #endif
-        userAgent = await JS.InvokeAsync<string>("browserInfo.getUserAgent");
-        //if (!string.IsNullOrEmpty(HttpContext.Session.GetString("HTTP_UID")))
-        //{
-        //    UserAgent = HttpContext.Session.GetString("HTTP_UID");
-        //    _log.LogInformation(string.Format("Retrieved computingId from session ('HTTP_UID') {0}", UserAgent));
-        //}
-        //else if (!string.IsNullOrEmpty(_context.Features.Get<IServerVariablesFeature>()["HTTP_UID"]))
-        //{
-        //    UserAgent = _context.Features.Get<IServerVariablesFeature>()["HTTP_UID"];
-        //    _log.LogInformation(string.Format("Retrieved computingId from server variable ('HTTP_UID') {0}", UserAgent));
-        //}
-
-        //LDAPEmployee user = new LDAPEmployee();
-        appData.CompID = string.IsNullOrEmpty(CompID) ? userAgent : CompID;
+    {
+        appData.CompID = CompID ?? "ws2s";
     }
 }
