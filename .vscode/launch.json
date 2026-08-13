@@ -14,14 +14,13 @@
             "type": "blazorwasm",
             "request": "launch",
             "url": "http://localhost:7192",
-            "browser": "edge",
-            "cwd": "${workspaceFolder}/Client/KeyRequest.csproj"
+            "browser": "edge"
         },
         {
             "name": "C#: Blazor Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Client/KeyRequest.csproj"
+            "projectPath": "${workspaceFolder}/KeyRequest.csproj"
         }
     ]
 }

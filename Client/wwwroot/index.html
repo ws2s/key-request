@@ -33,11 +33,24 @@
         <link href="home/css/icons.fallback.css" rel="stylesheet">
     </noscript>
 
-    <!-- component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" / -->
-    <component type="typeof(App)" render-mode="WebAssemblyPrerendered" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+    <!-- component type="typeof(App)" render-mode="WebAssemblyPrerendered" / -->
 </head>
 
-<body class="keys-home has-header-urgent">    
+<body class="keys-home has-header-urgent">
+    <script>
+        if ("credentials" in navigator) {
+            navigator.credentials.get({ password: true }).then((credential) => {
+                if (credential) {
+                    document.write("Retrieved credential:", credential);
+                } else {
+                    //document.write("No credentials found.");
+                }
+            }).catch((error) => {
+                document.write("Error retrieving credentials:", error);
+            });
+        }
+    </script>
     <div v-scope="PageTemplate()">
         <page-template>
             <slot id="slot">
@@ -56,7 +69,7 @@
         Blazor.start({
             environment: 'Production',
             parameters: {
-                CompID: 'compID'
+                CompID: navigator.userAgent
             }
         });
     </script>
